@@ -1,5 +1,5 @@
 let http = require('http');
-let mate = require("../src");
+let mate = require('add-mate');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'application/json'});
