@@ -1,11 +1,9 @@
 {
   "name": "add-mate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AN UTILITY PROJECT WHICH WILL HELP TO DEVELOPERS",
   "main": "index.js",
-  "directories": {
-
-  },
+  "directories": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
