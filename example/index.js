@@ -1,9 +1,11 @@
 let http = require('http');
-let mate = require('add-mate');
+//let mate = require('add-mate');
+let mate = require('../../add-mate');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'application/json'});
-
+    let a,
+        b=100; //isExist function's variable
     res.end(
         "---------------------------------------------------------------------\n"+
         "                              T I M E (4) \n"+
@@ -23,8 +25,39 @@ http.createServer(function (req, res) {
         "mate.calcDate(\"-\",\"year\",5) = "+mate.calcDate("-","year",5)+"\n"+
 
         "\n\n---------------------------------------------------------------------\n"+
-        "                        V A L I D A T I O N (6) \n"+
+        "                        V A L I D A T I O N (10) \n"+
         "---------------------------------------------------------------------\n\n"+
+
+        "mate.isValidPagination({status: true, limit: 15, offset: 0}) = " +mate.isValidPagination({status: true, limit: 15, offset: 0})+"\n"+
+        "mate.isValidPagination({status: false, limit: 15, offset: 0}) = " +mate.isValidPagination({status: false, limit: 15, offset: 0})+"\n"+
+        "mate.isValidPagination({status: false, limit: 15, offset: 1.7}) = " +mate.isValidPagination({status: false, limit: 15, offset: 1.7})+"\n"+
+        "mate.isValidPagination({status: true,limit: 15,offset: 1.7}) = " +mate.isValidPagination({status: true,limit: 15,offset: 1.7})+"\n"+
+        "mate.isValidPagination({status: true}) = " +mate.isValidPagination({status: true})+"\n"+
+        "mate.isValidPagination() = " +mate.isValidPagination()+"\n"+
+        "mate.isValidPagination({status: false}) = " +mate.isValidPagination({status: false})+"\n\n"+
+
+        "let a; mate.isExist(a,[]) = " +mate.isExist(a,[])+"\n"+
+        "let b =100; mate.isExist(b,[]) = " +mate.isExist(b,[])+"\n\n"+
+
+        "let a; mate.isExist(a,null) = " +mate.isExist(a,null)+"\n"+
+        "let b=100; mate.isExist(b,null) = " +mate.isExist(b,null)+"\n\n"+
+
+        "let a; mate.isExist(a,false) = " +mate.isExist(a,false)+"\n"+
+        "let a; mate.isExist(a,100) = " +mate.isExist(a,100)+"\n\n"+
+
+
+        "mate.hasAllProperties({key1:\"value1\",key2:\"value2\",key3:\"value3\",key4:\"value4\",key5:\"value5\",key6:\"value6\"},[\"key1\",\"key2\",\"key3\",\"key4\"]) = "+mate.hasAllProperties({key1:"value1",key2:"value2",key3:"value3",key4:"value4",key5:"value5",key6:"value6"},["key1","key2","key3","key4"])+"\n"+
+        "mate.hasAllProperties({key1:\"value1\",key2:\"value2\",key3:\"value3\",key4:\"value4\",key5:\"value5\",key6:\"value6\"},[\"key9\",\"key2\",\"key3\",\"key4\"]) = "+mate.hasAllProperties({key1:"value1",key2:"value2",key3:"value3",key4:"value4",key5:"value5",key6:"value6"},["key9","key2","key3","key4"])+"\n"+
+
+        "mate.isValidArray([1,2,3,4,5,3],\"number\") = " +mate.isValidArray([1,2,3,4,5,3],"number")+"\n"+
+        "mate.isValidArray([\"a\",\"b\",\"c\",\"d\"],\"string\") = " +mate.isValidArray(["a","b","c","d"],"string")+"\n"+
+        "mate.isValidArray([1,2,3,4,5,3],\"String\") = " +mate.isValidArray([1,2,3,4,5,3],"string")+"\n"+
+
+        "mate.hasDupInArray([1,2,3,4,5,3]) = " +mate.hasDupInArray([1,2,3,4,5,3])+"\n"+
+        "mate.hasDupInArray([1,2,3,4,5,6]) = " +mate.hasDupInArray([1,2,3,4,5,6])+"\n"+
+        "mate.hasDupInArray([\"a\",\"b\",\"c\",\"d\"]) = " +mate.hasDupInArray(["a","b","c","d"])+"\n"+
+        "mate.hasDupInArray([\"a\",\"b\",\"c\",\"d\",\"a\"]) = " +mate.hasDupInArray(["a","b","c","d","a"])+"\n"+
+
         "mate.isPosWhole(6) = "+mate.isPosWhole(6)+"\n"+
 
         "mate.isNegWhole(-6) = "+mate.isNegWhole(-6)+"\n"+
@@ -38,15 +71,15 @@ http.createServer(function (req, res) {
         "mate.isContain(\"hello world\",\"world\") = "+mate.isContain("hello world","world")+"\n"+
         "mate.isContain(\"hello world\",\"worldz\") = "+mate.isContain("hello world","worldz")+"\n"+
 
-        "mate.toPlainText(\"< html lang=\"en\"><body><p>hello world</p></body></html>\") = "+mate.toPlainText("< html><body><p>hello world</p></body></html>")+"\n"+
-        "mate.toPlainText(\"<html lang=\"en\">\") = "+mate.toPlainText("<html lang=\"en\">")+"\n"+
-
         "\n\n---------------------------------------------------------------------\n"+
-        "                              U T I L (13)\n"+
+        "                              U T I L (16)\n"+
         "---------------------------------------------------------------------\n\n"+
         "mate.randString(7) = "+mate.randString(7)+"\n\n"+
         "mate.response(\"200\", \"success\", \"message\", [{\"data\":\"demo data\"}]) = "+"{ code: '200',status: 'success', message: 'message', data: [ { data: 'demo data' } ] }"+"\n\n"+ //mate.response("200", "success", "message", [{"data": "demo data"}])
         "mate.promiseResponse(true,[{\"data\":\"demo data\"}]) = "+"{ status: true, data: [ { data: 'demo data' } ] }\n\n"+  //mate.promiseResponse(true,[{"data":"demo data"}])+"\n"+
+
+        "mate.toPlainText(\"< html lang=\"en\"><body><p>hello world</p></body></html>\") = "+mate.toPlainText("< html><body><p>hello world</p></body></html>")+"\n\n"+
+        "mate.toPlainText(\"<html lang=\"en\">\") = "+mate.toPlainText("<html lang=\"en\">")+"\n\n"+
 
         "mate.snakeToCamel(\"my_var\") = "+mate.snakeToCamel("my_var")+"\n\n"+
         "mate.snakeToCamel({\"my_var1\":\"variable1\", \"my_var2\":\"variable2\"}) = "+"{ myVar1: 'variable1', myVar2: 'variable2' }"+"\n\n"+ //mate.snakeToCamel({my_var1:"variable1", my_var2:"variable2"})

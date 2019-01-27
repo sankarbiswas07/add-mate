@@ -17,18 +17,19 @@ function hasDupInArray(arr){
 }
 
 //Check whether pagination object is valid or not | return boolean | helpers.isValidPagination(JSON.parse(req.query.input).pagination) | O(1)
-function isValidPagination(pagination){
-    if(pagination.status){
-        return !!(
-            !isNaN(pagination.limit)
-            && pagination.limit > 0
-            && !isNaN(pagination.offset)
-            && JSON.parse(pagination.offset >= 0)
-            && Number.isSafeInteger(pagination.offset)
-            && Number.isSafeInteger(pagination.limit)
-        );
+function isValidPagination  (pagination){
+    if(typeof pagination==="object" && pagination.hasOwnProperty("status")){
+        if(pagination.status){
+            return !! (
+                this.hasAllProperties(pagination,["limit","offset"])
+                && this.isPosWhole(pagination.limit)
+                && this.isPosWhole(pagination.offset)
+            );
+        }else{
+            return true;
+        }
     }else{
-        return true;
+        return ("param.status should be boolean , if status is true offset & limit should be positive int");
     }
 }
 
