@@ -71,4 +71,6 @@ function toText(num,type,isCurrency){
 
 function frac_one(num) {return num % 1;}
 
-module.exports = numberToText;
+module.exports = {
+    numberToText:numberToText
+};
