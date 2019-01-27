@@ -54,7 +54,7 @@ mate.isContain("hello world","world") = true
 mate.isContain("hello world","worldz") = false
 ```
 
-_**Utilities_**
+**_Utilities_**
 ```
 mate.toPlainText("< html lang="en"><body><p>hello world</p></body></html>") =  < html > < body > < p > hello world < /p > < /body > < /html > 
 
@@ -141,6 +141,6 @@ mate.percent(1000, 10, true) = { percent: 90.90909090909088,before: 909.09090909
 
 * **Sankar Prasad Biswas**
 
-##License
+## License
 #### [ISC](./LICENSE.md)
 
