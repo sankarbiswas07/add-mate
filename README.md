@@ -43,7 +43,7 @@ mate.utcTimeStamp().timeStamp = 1548535853815
  
  * get DateTime sting and convert it into MySQL Date time 
      
-     [eg: data collect from mongo and save intn MySQL]  
+     [eg: data collect from mongo and save into MySQL]  
 
 ```
 mate.stringToTimestamp("2019-01-24T12:50:37") = 2019-1-24 12:50:37
