@@ -4,6 +4,7 @@ let array=require("./Array");
 let object = require("./Object");
 let string = require("./String");
 let mixed = require("./Mixed");
+let Password = require("./Password");
 
 
 //exports
@@ -13,6 +14,7 @@ module.exports = Object.assign(
     mixed,
     object,
     string,
+    Password,
     NumericCalculation,
     NumberToText
 );

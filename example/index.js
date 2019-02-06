@@ -3,6 +3,7 @@ let http = require('http');
 let mate = require('../../add-mate');
 
 http.createServer(function (req, res) {
+    console.log(mate.pwdStrength(124313));
     res.writeHead(200, {'Content-Type': 'application/json'});
     let a,
         b=100; //isExist function's variable
