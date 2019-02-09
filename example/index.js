@@ -1,16 +1,16 @@
 let http = require('http');
 //let mate = require('add-mate');
 let mate = require('../../add-mate');
-
 http.createServer(function (req, res) {
-    console.log(mate.pwdStrength(124313));
     res.writeHead(200, {'Content-Type': 'application/json'});
     let a,
         b=100; //isExist function's variable
+    console.log(mate.sortObject([{a: 5}, {a: 2}, {a: 5}, {a: 4}],a));
     res.end(
         "---------------------------------------------------------------------\n"+
         "                              T I M E (4) \n"+
         "---------------------------------------------------------------------\n\n"+
+
         "mate.utcTimeStamp().timeString = "+mate.utcTimeStamp().timeString+"\n"+
         "mate.utcTimeStamp().timeStamp = "+mate.utcTimeStamp().timeStamp+"\n"+
 
