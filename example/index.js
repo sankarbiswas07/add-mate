@@ -124,7 +124,12 @@ http.createServer(function (req, res) {
         "mate.nthLargestRange([1,3,4,2,5],4,1) = "+mate.nthLargestRange([1,3,4,2,5],4,1)+"\n\n"+
 
         "mate.nthSmallestRange([1,2,3,4,5],2,4) = "+mate.nthSmallestRange([1,2,3,4,5],2,4)+"\n\n"+
-        "mate.nthSmallestRange([1,3,4,2,5],4,1) = "+mate.nthSmallestRange([1,3,4,2,5],4,1)+"\n\n"+
+        "mate.nthSmallestRange([1,3,4,2,5],4,1) = " + mate.nthSmallestRange([1, 3, 4, 2, 5], 4, 1) + "\n\n" +
+
+        "mate.pwdStrength(124313) = " + JSON.stringify(mate.pwdStrength(124313)) + "\n\n" +
+        "mate.pwdStrength(\"MyCustomPa$$23224\") = " + JSON.stringify(mate.pwdStrength("MyCustomPa$$23224")) + "\n\n" +
+        "mate.pwdStrength(\"abbas1221\") = " + JSON.stringify(mate.pwdStrength('abbas1221')) + "\n\n" +
+        "mate.pwdStrength(\"\") = " + JSON.stringify(mate.pwdStrength("")) + "\n\n" +
 
         "\n\n---------------------------------------------------------------------\n"+
         "                        C A L C U L A T I O N (1) \n"+
