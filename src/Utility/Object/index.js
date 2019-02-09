@@ -1,3 +1,4 @@
+
 // Send Response
 function response(code,status,message,data=""){
     let response = {};
@@ -28,17 +29,7 @@ function promiseResponse(status, data=""){
     return response;
 }
 
-// Sorting an Object
-function sortObject(obj) {
-    return Object.keys(obj).sort().reduce(function (result, key) {
-        result[key] = obj[key];
-        return result;
-    }, {});
-}
-
 module.exports = {
     response : response,
-    promiseResponse: promiseResponse,
-    sortObject:sortObject
-
+    promiseResponse: promiseResponse
 };

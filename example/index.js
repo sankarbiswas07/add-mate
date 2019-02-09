@@ -5,7 +5,7 @@ http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'application/json'});
     let a,
         b=100; //isExist function's variable
-    console.log(mate.sortObject([{a: 5}, {a: 2}, {a: 5}, {a: 4}],a));
+    console.log(mate.quickSortObject([{a: 5, b:2}, {a: 2,b:1}, {a: 5,b:3}, {a: 4,b:4}],["a","b"],["desc","desc"],[parseInt,parseInt]));
     res.end(
         "---------------------------------------------------------------------\n"+
         "                              T I M E (4) \n"+
