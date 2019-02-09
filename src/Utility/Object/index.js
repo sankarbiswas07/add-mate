@@ -29,16 +29,23 @@ function promiseResponse(status, data=""){
 }
 
 // Sorting an Object
-function sortObject(obj) {
-    return Object.keys(obj).sort().reduce(function (result, key) {
-        result[key] = obj[key];
-        return result;
-    }, {});
+function sortObject(obj,field, reverse, dataType){
+    let key = dataType ?
+        function(x) {return dataType(x[field])} :
+        function(x) {return x[field]};
+    reverse = !reverse ? 1 : -1;
+
+    let cb =  function (a, b) {
+        a = key(a);
+        b = key(b);
+        return reverse * ((a > b) - (b > a));
+    };
+    return (obj.sort(cb));
 }
+//let k = sortObject(homes,'price', false, parseInt);
 
 module.exports = {
     response : response,
     promiseResponse: promiseResponse,
     sortObject:sortObject
-
 };
