@@ -1,8 +1,8 @@
 // Constructor function for ScorePassword Object
-var Password = (function () {
-    var findStrength = function (pass) {
-        let letters = new Object();
-        var score = 0;
+let Password = (function () {
+    let findStrength = function (pass) {
+        let letters = {};
+        let score = 0;
         for (let i = 0; i < pass.length; i++) {
             letters[pass[i]] = (letters[pass[i]] || 0) + 1;
             score += 5.0 / letters[pass[i]];
@@ -23,8 +23,8 @@ var Password = (function () {
         score += (variationCount - 1) * 10;
 
         return parseInt(score);
-    }
-    var getStrength = function (pass) {
+    };
+    let getStrength = function (pass) {
         if (pass) {
             let score = findStrength(pass.toString());
             if (score >= 100)
@@ -62,7 +62,7 @@ var Password = (function () {
         } else {
             return ("Bad Request")
         }
-    }
+    };
     return {
         getStrength: getStrength
     }
