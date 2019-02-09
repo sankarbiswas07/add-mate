@@ -187,7 +187,7 @@ mate.numberToText(123.45,"english",true) = One Hundred And  Twenty-Three Dollar 
 
 ```
 
- * Array Union | mate.arrIntersect(arr1,arr2,optional[delete duplicate? default=false])  
+ * Array Union | mate.arrUnion(arr1,arr2,optional[delete duplicate? default=false])  
 ```
 mate.arrUnion([1,2,3],[1,2,3],true) = 1,2,3
 mate.arrUnion([1,2,3],[1,2,3],false) = 1,2,3,1,2,3
@@ -203,14 +203,14 @@ mate.arrIntersect(["hello","hello","world"],["hello","mike"],true) = hello
 
 ```
 
- * Array Difference | mate.arrIntersect(arr1,arr2,optional[delete duplicate? default=false])  
+ * Array Difference | mate.arrDiff(arr1,arr2,optional[delete duplicate? default=false])  
 ```
 mate.arrDiff(["hello","hello","world","world"],["hello","mike"]) = world,world
 mate.arrDiff(["hello","hello","world","world"],["hello","mike"],true) = world
 
 ```
 
-*  Array Symmetric Difference | mate.arrIntersect(arr1,arr2,optional[delete duplicate? default=false])  
+*  Array Symmetric Difference | mate.arrSymDiff(arr1,arr2,optional[delete duplicate? default=false])  
 ```
 mate.arrSymDiff(["hello","hello","world","world"],["hello","mike"]) = world,world,mike
 mate.arrSymDiff(["hello","hello","world","world"],["hello","mike"],true) = world,mike
