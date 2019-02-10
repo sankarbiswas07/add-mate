@@ -1,5 +1,6 @@
 # **add-mate**
-<img class="retina-badge" src="https://badge.fury.io/js/add-mate.svg">
+<img class="retina-badge" src="https://badge.fury.io/js/add-mate.svg"> 
+<img alt="add-mate" src="https://img.shields.io/npm/dm/add-mate.svg?style=plastic">
 <br/><br/>
 
 A project of a npm-module. I truly believe, the functions will help developers a lot. contribution from you will highly appreciated . thank you
