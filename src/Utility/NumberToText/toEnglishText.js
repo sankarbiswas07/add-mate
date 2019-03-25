@@ -49,7 +49,7 @@ function toEnglishText(num,isCurrency) {
         if(isCurrency)
         {
             if (!(res === "")) {
-                res += " And "; //for currency only
+                res += " And"; //for currency only
             }
         }
 

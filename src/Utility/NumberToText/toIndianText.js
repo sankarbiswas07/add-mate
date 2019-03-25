@@ -43,7 +43,7 @@ function toIndianText(num,isCurrency){
         if(isCurrency)
         {
             if (!(res===""))
-                res += " And ";
+                res += " And";
         }
 
         if (!(res===""))

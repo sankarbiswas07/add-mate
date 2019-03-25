@@ -253,15 +253,25 @@ mate.nthLargestRange([1,3,4,2,5],4,1) = 1st param should be array , 2nd should b
 mate.nthSmallestRange([1,2,3,4,5],2,4) = 2,3,4
 mate.nthSmallestRange([1,3,4,2,5],4,1) = 1st param should be array , 2nd should be a largest no and smaller then array size
 
+
+```
+
+ * Check a password Strength | mate.pwdStrength(password)
+```
+mate.pwdStrength(124313) = {"slab":"not recommended","score":25}
+mate.pwdStrength("MyCustomPa$$23224") = {"slab":"strongest","score":100}
+mate.pwdStrength("abbas1221") = {"slab":"weak","score":45}
+mate.pwdStrength("") = "Bad Request"
+
 ```
 
 **_Few Calculation_** 
 
- * one function | mate.percent(amount,percent,optional) | if optional true, it will calculate reverse  
+ * one function | mate.percentage(amount,percent,optional) | if optional true, it will calculate reverse  
 ```
-mate.percent(1000, 5) = { percent: 50, after: 1050, before: 950 }
-mate.percent(153, 1.7) = { percent: 2.6009999999999995, after: 155.601, before: 150.399 }
-mate.percent(1000, 10, true) = { percent: 90.90909090909088,before: 909.0909090909091, after: 1000 
+mate.percentage(1000, 5) = { percent: 50, after: 1050, before: 950 }
+mate.percentage(153, 1.7) = { percent: 2.6009999999999995, after: 155.601, before: 150.399 }
+mate.percentage(1000, 10, true) = { percent: 90.90909090909088,before: 909.0909090909091, after: 1000 
 
 ```
 

@@ -23,6 +23,4 @@ function percentage(principle,percent,isReverse=false){
 
 
 //Exports
-module.exports ={
-    percentage:percentage
-};
+module.exports =percentage;
