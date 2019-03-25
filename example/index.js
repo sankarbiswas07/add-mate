@@ -1,15 +1,17 @@
 let http = require('http');
 //let mate = require('add-mate');
 let mate = require('../../add-mate');
-
 http.createServer(function (req, res) {
+   // console.log(Object.keys(mate));
     res.writeHead(200, {'Content-Type': 'application/json'});
     let a,
         b=100; //isExist function's variable
+    // console.log(mate.quickSortObject([{a: 5, b:2}, {a: 2,b:1}, {a: 5,b:3}, {a: 4,b:4}],["a","b"],["desc","desc"],[parseInt,parseInt]));
     res.end(
         "---------------------------------------------------------------------\n"+
         "                              T I M E (4) \n"+
         "---------------------------------------------------------------------\n\n"+
+
         "mate.utcTimeStamp().timeString = "+mate.utcTimeStamp().timeString+"\n"+
         "mate.utcTimeStamp().timeStamp = "+mate.utcTimeStamp().timeStamp+"\n"+
 
@@ -87,12 +89,22 @@ http.createServer(function (req, res) {
         "mate.camelToSnake(\"myVar\") = "+mate.camelToSnake("myVar")+"\n\n"+
         "mate.camelToSnake({\"myVar1\":\"variable1\", \"myVar2\":\"variable2\"}) = "+"{ my_var1: 'variable1', my_var2: 'variable2' }"+"\n\n"+ //mate.camelToSnake({myVar1:"variable1", myVar2:"variable2"})
 
-        "mate.numberToText(1234567654356786.4,\"english\") = "+mate.numberToText(1234567654356786.4,"english")+"\n\n"+
-        "mate.numberToText(1234567654356786.4,\"indian\") = "+mate.numberToText(1234567654356786.4,"indian")+"\n\n"+
-        "mate.numberToText(1234567654356786.4) = "+mate.numberToText(1234567654356786.4)+"\n\n"+
-        "mate.numberToText(123.45,\"indian\",true) = "+mate.numberToText(123.45,"indian",true)+"\n\n"+
-        "mate.numberToText(123.45,\"english\",true) = "+mate.numberToText(123.45,"english",true)+"\n\n"+
+        
+        
+        
+       "mate.numberToText(1234567654356786.4,\"english\") = "+mate.numberToText(1234567654356786.4,"english")+"\n\n"+
+       "mate.numberToText(1234567654356786.4,\"indian\") = "+mate.numberToText(1234567654356786.4,"indian")+"\n\n"+
+       "mate.numberToText(1234567654356786.4) = "+mate.numberToText(1234567654356786.4)+"\n\n"+
+       "mate.numberToText(123.45,\"indian\",true) = "+mate.numberToText(123.45,"indian",true)+"\n\n"+
+       "mate.numberToText(123.45,\"indian\") = "+mate.numberToText(123.45,"indian")+"\n\n"+
+      
+        "mate.numberToText(12343.45,\"indian\") = "+mate.numberToText(12343.45,"indian")+"\n\n"+
+        "mate.numberToText(124553.45,\"indian\",true) = "+mate.numberToText(124553.45,"indian",true)+"\n\n\n"+
 
+        "mate.numberToText(12387.45,\"english\") = "+mate.numberToText(12387.45,"english")+"\n\n"+
+        "mate.numberToText(12367.45,\"english\",true) = "+mate.numberToText(12367.45,"english",true)+"\n\n\n"+
+                
+        
         "mate.arrUnion([1,2,3],[1,2,3],true) = "+mate.arrUnion([1,2,3],[1,2,3],true)+"\n\n"+
         "mate.arrUnion([1,2,3],[1,2,3],false) = "+mate.arrUnion([1,2,3],[1,2,3],false)+"\n\n"+
         "mate.arrUnion([\"hello\",\"hello\",\"world\"],[\"hello\",\"hello\",\"mike\"]) = "+mate.arrUnion(["hello","world"],["hello","mike"])+"\n\n"+
@@ -123,14 +135,19 @@ http.createServer(function (req, res) {
         "mate.nthLargestRange([1,3,4,2,5],4,1) = "+mate.nthLargestRange([1,3,4,2,5],4,1)+"\n\n"+
 
         "mate.nthSmallestRange([1,2,3,4,5],2,4) = "+mate.nthSmallestRange([1,2,3,4,5],2,4)+"\n\n"+
-        "mate.nthSmallestRange([1,3,4,2,5],4,1) = "+mate.nthSmallestRange([1,3,4,2,5],4,1)+"\n\n"+
+        "mate.nthSmallestRange([1,3,4,2,5],4,1) = " + mate.nthSmallestRange([1, 3, 4, 2, 5], 4, 1) + "\n\n" +
+
+        "mate.pwdStrength(124313) = " + JSON.stringify(mate.pwdStrength(124313)) + "\n\n" +
+        "mate.pwdStrength(\"MyCustomPa$$23224\") = " + JSON.stringify(mate.pwdStrength("MyCustomPa$$23224")) + "\n\n" +
+        "mate.pwdStrength(\"abbas1221\") = " + JSON.stringify(mate.pwdStrength('abbas1221')) + "\n\n" +
+        "mate.pwdStrength(\"\") = " + JSON.stringify(mate.pwdStrength("")) + "\n\n" +
 
         "\n\n---------------------------------------------------------------------\n"+
         "                        C A L C U L A T I O N (1) \n"+
         "---------------------------------------------------------------------\n\n"+
-        "mate.percent(1000, 5) = "+"{ percent: 50, after: 1050, before: 950 }"+"\n"+
-        "mate.percent(153, 1.7) = "+"{ percent: 2.6009999999999995, after: 155.601, before: 150.399 }"+"\n"+
-        "mate.percent(1000, 10, true) = "+"{ percent: 90.90909090909088,before: 909.0909090909091, after: 1000 }"
+       "mate.percentage(1000, 5) = "+ JSON.stringify(mate.percentage(1000, 5))+"\n"+
+       "mate.percentage(153, 1.7) = "+ JSON.stringify(mate.percentage(153, 1.7))+"\n"+
+       "mate.percentage(1000, 10, true) = "+ JSON.stringify(mate.percentage(1000, 10, true))+"\n"
     );
 
 }).listen(1337, "127.0.0.1");

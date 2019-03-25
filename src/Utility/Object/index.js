@@ -1,4 +1,5 @@
-//Send Response
+
+// Send Response
 function response(code,status,message,data=""){
     let response = {};
     if(code){
@@ -16,7 +17,7 @@ function response(code,status,message,data=""){
     return response;
 }
 
-//Send Promise Response
+// Send Promise Response
 function promiseResponse(status, data=""){
     let response = {};
     if(typeof (status) === "boolean"){

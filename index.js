@@ -19,7 +19,7 @@ module.exports = require("./src");
 *
 * Sub-module             :    Array
 * File-Folder            :    "./src/Utility/Array/index.js"
-* Total Function Count   :    08
+* Total Function Count   :    09
 * Functions              :    arrUnion,
                               arrIntersect,
                               arrDiff,
@@ -28,6 +28,7 @@ module.exports = require("./src");
                               nthLargestRange,
                               nthSmallest,
                               nthSmallestRange,
+                              pwdStrength
 
 * Sub-module             :    Mixed
 * File-Folder            :    "./src/Utility/Mixed/index.js"
